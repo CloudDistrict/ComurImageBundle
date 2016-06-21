@@ -199,7 +199,7 @@ class UploadController extends Controller
 
 
         //Create thumbs if asked
-        $previewSrc = '/'.$config['uploadConfig']['webDir'] . '/' . $this->container->getParameter('comur_image.cropped_image_dir') . '/'. $imageName;
+        $previewSrc = '/'.$config['uploadConfig']['uploadDir'] . '/' . $this->container->getParameter('comur_image.cropped_image_dir') . '/'. $imageName;
         if(isset($config['cropConfig']['thumbs']) && ($thumbs = $config['cropConfig']['thumbs']) && count($thumbs))
         {
             $thumbDir = $uploadUrl.'/'.$this->container->getParameter('comur_image.cropped_image_dir') . '/' . $this->container->getParameter('comur_image.thumbs_dir').'/';
@@ -225,7 +225,7 @@ class UploadController extends Controller
                 $thumbSrc = $thumbDir . $thumbName;
                 $this->resizeCropImage($thumbSrc, $destSrc, 0, 0, 0, 0, $w, $h, $destW, $destH);
                 if(isset($thumb['useAsFieldImage']) && $thumb['useAsFieldImage']){
-                    $previewSrc = '/'.$config['uploadConfig']['webDir'] . '/' . $this->container->getParameter('comur_image.cropped_image_dir') . '/'. $this->container->getParameter('comur_image.thumbs_dir'). '/' . $thumbName;
+                    $previewSrc = '/'.$config['uploadConfig']['uploadDir'] . '/' . $this->container->getParameter('comur_image.cropped_image_dir') . '/'. $this->container->getParameter('comur_image.thumbs_dir'). '/' . $thumbName;
                 }
             }
         }

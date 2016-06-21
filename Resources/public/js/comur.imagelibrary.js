@@ -201,7 +201,7 @@ function cropImage(id, options){
             }
             else{
                 // console.log('simple image');
-                $('#'+id).val(filename);
+                $('#'+id).val(options.uploadConfig.uploadDir+'/'+filename);
                 $('#image_preview_image_'+id).html('<img src="'+previewSrc+'?'+ new Date().getTime()+'" id="'+id+'_preview"/>');
                 // console.log(options.uploadConfig.saveOriginal, $('#'+options.originalImageFieldId), options.originalImageFieldId);
                 if(options.uploadConfig.saveOriginal){
