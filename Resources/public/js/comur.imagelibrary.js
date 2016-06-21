@@ -123,7 +123,7 @@ function initJCrop(id, options){
     // if(!options.cropConfig.disableCrop){
         var now = new Date().getTime();
         $('#image_preview img').remove();
-        $('#image_preview').html('<img src="/'+options.uploadConfig.webDir + '/'+$('#selected_image').val()+'?'+now+'" id="image_preview_image"/>');
+        $('#image_preview').html('<img src="/'+options.uploadConfig.uploadDir + '/'+$('#selected_image').val()+'?'+now+'" id="image_preview_image"/>');
         $('#image_preview img').load(function(){
 
             
@@ -210,7 +210,7 @@ function cropImage(id, options){
                     $('#image_preview_image_'+id+' img').css('cursor: hand; cursor: pointer;');
                     $('#image_preview_image_'+id+' img').click(function(e){
                         if($( event.target ).is( "img" )){
-                            $('<div class="modal hide fade"><img src="'+options.uploadConfig.webDir+'/'+$('#selected_image').val()+'"/></div>').modal();
+                            $('<div class="modal hide fade"><img src="'+options.uploadConfig.uploadDir+'/'+$('#selected_image').val()+'"/></div>').modal();
                             return false;
                         }
                     });

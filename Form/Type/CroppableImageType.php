@@ -61,6 +61,7 @@ class CroppableImageType extends AbstractType
         $uploadConfig = array(
             'uploadRoute' => 'comur_api_upload',
             'uploadUrl' => null,
+            'uploadDir' => null,
             'webDir' => null,
             'fileExt' => '*.jpg;*.gif;*.png;*.jpeg',
             'libraryDir' => null,
